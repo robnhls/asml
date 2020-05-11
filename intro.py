@@ -52,5 +52,9 @@ population = 12000
 message = "The population of {} is {}".format(city, population)
 print(message)
 
-message = "The population of {} is {:32b}".format(city, population)
+message = "The population of {} is {:,}".format(city, population)
+print(message)
+
+# f strings 3.6+
+message = f"The population of {city} is {population}"
 print(message)
