@@ -12,14 +12,14 @@
 #     print("That is not a big number")
 
 
-counter = 5
+counter = 21
 while counter > 0:
 
-    print("Current value", counter)
     counter -= 1
-
     if counter == 7:
-        break
+        continue
+
+    print("Current value", counter)
     
 
 print("Blastoff!!!")
