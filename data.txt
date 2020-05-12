@@ -1,0 +1,11 @@
+red,dallas
+green,atlanta
+orange,buffalo
+purple,new york
+yellow,cleveland
+blue,detroit
+brown,columbus
+white,portland
+black,los angels
+pink,memphis
+indigo,boston

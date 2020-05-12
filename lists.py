@@ -40,7 +40,7 @@ odd_pets = pets[1::2]
 #     counter += 1
 
 
-for pet_name in pets[::2]:
+for pet_name in pets:
     print(pet_name)
 
 
