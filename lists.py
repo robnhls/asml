@@ -44,6 +44,6 @@ for pet_name in pets:
     print(pet_name)
 
 
-# for index, name in enumerate(pets):
+# for index, name in enumerate(pets):2
 
 
