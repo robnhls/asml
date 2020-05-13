@@ -3,6 +3,10 @@ import unittest
 
 class test_deck(unittest.TestCase):
 
+    def setUp(self):
+        self.cards = deck.getcards()
+
+
     def test_52_cards(self):
         # AAA Pattern
 
@@ -10,8 +14,8 @@ class test_deck(unittest.TestCase):
         EXPECTED_COUNT = 52
 
         # Act
-        cards = deck.getcards()
-        count = len(cards)
+        
+        count = len(self.cards)
 
         # Assert
         self.assertEqual(count, EXPECTED_COUNT)
@@ -21,9 +25,9 @@ class test_deck(unittest.TestCase):
         HEART_COUNT = 13
         suit = deck.HEARTS
 
-        cards = deck.getcards()
+        
         count = 0
-        for card in cards:
+        for card in self.cards:
             if card[1] == suit:
                 count += 1
         
