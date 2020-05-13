@@ -9,7 +9,8 @@ class Student:
         self.name = name
         self.email = email
         self.grade = grade
-        self._age = age
+        self._age = None
+        self.age = age
 
 
     @property
@@ -59,9 +60,13 @@ def _main():
     s2 = Student("alice jones", "alice@example.com")
 
     # we may want to dissalow this
-    s1.age = 790
-    s1.age = -45
+    # s1.age = 790 # yes it causes an error
+    # s1.age = -45 # yes is also causes an error
+    s1.age = 48
 
+    # s1._age = 1000 # this is allowed, but a generally accepted bad idea
+
+    print("current Age", s1.age)
 
     print(type(s1))
     print(s1.name, s1.email)
