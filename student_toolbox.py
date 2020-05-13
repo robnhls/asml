@@ -3,6 +3,9 @@
 
 class Student:
 
+    # class Data/attributes are the same for EVERY instance
+    fromLine = "Automated Student Email Service"
+
     # how to instantiate (create) a student
     def __init__(self, name, email, grade="professional", age=29):
         # these can be read and modified by the user/client
@@ -38,6 +41,7 @@ class Student:
 
         print("-" * 50)
         print("To:", self.name, self.email)
+        print("From:", Student.fromLine)
         print("Title:", title)
         print()
         print(body)
@@ -49,15 +53,30 @@ class Student:
         print("{} is registered for {}".format(self.name, course_title))
         self.send_email("Registration Complete", "You are registered for " + course_title)
 
+    @classmethod
+    def change_from_line(cls, new_from_line):
+        if len(new_from_line) == 0:
+            raise ValueError("fromLine must be a non-zero length string")
 
+        cls.fromLine = new_from_line
+
+    @staticmethod  #static Method has not extra parameters (no cls, no self)
+    def create(name):
+        student = Student(name, name+"@example.com")
+        return student
 
 
 def _main():
 
-    
+    Student.change_from_line("Automated Whosit")
 
     s1 = Student("rob foulkrod", "rob.foulkrod@nhls.com", age=47)
     s2 = Student("alice jones", "alice@example.com")
+    s3 = Student.create("John.the.linter")
+
+
+    s3.send_email("Need help coding", "Here is some sample code I found. And I need some help")
+
 
     # we may want to dissalow this
     # s1.age = 790 # yes it causes an error
